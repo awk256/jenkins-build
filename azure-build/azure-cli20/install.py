@@ -47,7 +47,7 @@ VIRTUALENV_ARCHIVE = 'virtualenv-'+VIRTUALENV_VERSION+'.tar.gz'
 VIRTUALENV_DOWNLOAD_URL = 'https://pypi.python.org/packages/source/v/virtualenv/'+VIRTUALENV_ARCHIVE
 VIRTUALENV_ARCHIVE_SHA256 = '70d63fb7e949d07aeb37f6ecc94e8b60671edb15b890aa86dba5dfaf2225dc19'
 
-DEFAULT_INSTALL_DIR = os.path.expanduser(os.path.join('/var', 'lib', 'azure-cli'))
+DEFAULT_INSTALL_DIR = os.path.expanduser(os.path.join('/usr', 'lib', 'azure-cli'))
 DEFAULT_EXEC_DIR = os.path.expanduser(os.path.join('/usr', 'bin'))
 EXECUTABLE_NAME = 'az'
 
@@ -268,7 +268,7 @@ def warn_other_azs_on_path(exec_dir, exec_filepath):
 
 def handle_path_and_tab_completion(completion_file_path, exec_filepath, exec_dir):
     #ans_yes = prompt_y_n('Modify profile to update your $PATH and enable shell/tab completion now?', 'y')
-    ans_yes = True 
+    ans_yes = True
     if ans_yes:
         rc_file_path = get_rc_file_path()
         if not rc_file_path:
@@ -308,7 +308,7 @@ def _native_dependencies_for_dist(verify_cmd_args, install_cmd_args, dep_list):
         err_msg += '"{}"'.format(' '.join(install_cmd_args + dep_list))
         print_status(err_msg)
         #ans_yes = prompt_y_n('Missing native dependencies. Attempt to continue anyway?', 'n')
-        ans_yes = True 
+        ans_yes = True
         if not ans_yes:
             raise CLIInstallError('Please install the native dependencies and try again.')
 
